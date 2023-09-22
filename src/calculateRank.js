@@ -77,7 +77,7 @@ function calculateRank({
       STARS_WEIGHT * log_normal_cdf(stars / STARS_MEDIAN) +
       FOLLOWERS_WEIGHT * log_normal_cdf(followers / FOLLOWERS_MEDIAN)) /
       TOTAL_WEIGHT;
-  const new_rank = rank * 1.5;
+  const new_rank = rank * 0.5;
   const level = LEVELS[THRESHOLDS.findIndex((t) => new_rank * 100 <= t)];
 
   return { level, percentile: new_rank * 100 };
